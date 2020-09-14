@@ -9,3 +9,8 @@ python3 -m django startproject blog_django
 1. ```python 
     
     ```
+
+## Run
+```python
+python3 manage.py runserver
+```
