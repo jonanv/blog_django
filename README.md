@@ -10,6 +10,11 @@ python3 -m django startproject blog_django
     
     ```
 
+## Create app [mainapp]
+```python
+python3 manage.py startapp mainapp
+```
+
 ## Run
 ```python
 python3 manage.py runserver
