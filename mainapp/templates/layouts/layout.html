@@ -37,6 +37,11 @@
             <li>
                 <a href="{% url 'about' %}">Sobre nosotros</a>
             </li>
+            {% for page in pages %}
+                <li>
+                    <a href="#">{{ page.1 }}</a>
+                </li>
+            {% endfor %}
         </ul>
     </nav>
 
