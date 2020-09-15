@@ -21,6 +21,11 @@ python3 -m django startproject blog_django
 python3 manage.py startapp mainapp
 ```
 
+## Create user for administration panel
+```python
+python3 manage.py createsuperuser
+```
+
 ## Run
 ```python
 python3 manage.py runserver
