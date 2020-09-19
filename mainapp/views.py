@@ -15,3 +15,9 @@ def about(request):
     return render(request, 'mainapp/about.html', {
         'title': 'About'
     })
+
+def register_page(request):
+
+    return render(request, 'users/register.html', {
+        'title': 'Registro'
+    })
