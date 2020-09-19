@@ -1,4 +1,5 @@
 {% extends 'layouts/layout.html' %}
+{% load static %}
 
 {% block title %}
     {{ article.title }}
@@ -7,5 +8,16 @@
 {% block content %}
     <h1 class="title">{{ article.title }}</h1>
     <span class="badge badge-info">{{ article.created_at }}</span>
+
+    {% if article.image != 'null' and article.image|length >= 1 %}
+        <div class="col-md-4 d-flex justify-content-center align-items-center align-content-center">
+            <img src="{{ article.image.url }}" class="card-img rounded img-fluid" alt="..." style="width: 150px">
+        </div>
+    {% else %}
+        <div class="col-md-4 d-flex justify-content-center align-items-center align-content-center">
+            <img src="{% static 'img/no-image.png' %}" class="card-img rounded img-fluid" alt="..." style="width: 150px">
+        </div>
+    {% endif %}
+
     <p class="text-justify">{{ article.content|safe }}</p>
 {% endblock content %}
