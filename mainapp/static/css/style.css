@@ -49,7 +49,7 @@ header {
 
 /* Estilos barra de navegacion */
 
-nav {
+nav.menu {
     width: 95%;
     height: auto;
     background-color: #1b1b1b;
@@ -59,7 +59,7 @@ nav {
     font-size: 15px;
 }
 
-nav>ul {
+nav.menu>ul {
     list-style: none;
     text-decoration: none;
     display: flex;
@@ -67,26 +67,26 @@ nav>ul {
     margin-bottom: 0;
 }
 
-nav>ul>li {
+nav.menu>ul>li {
     padding: 0px 10px;
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
-nav>ul>li>a {
+nav.menu>ul>li>a {
     color: #d1d4d6;
     padding: 12px;
 }
 
-nav>ul>li>a:hover {
+nav.menu>ul>li>a:hover {
     background: #2ba977;
     box-shadow: 0px 0px 5px #444444 inset;
     color: white;
     transition: all 300ms;
 }
 
-nav>ul>li>ul {
+nav.menu>ul>li>ul {
     display: none;
     position: absolute;
     background-color: #f2f1f0;
@@ -101,13 +101,13 @@ nav>ul>li>ul {
     list-style: none;
 }
 
-nav>ul>li:hover>ul {
+nav.menu>ul>li:hover>ul {
     display: block;
     color: white;
     margin: 0px;
 }
 
-nav>ul>li:hover>ul>li>a {
+nav.menu>ul>li:hover>ul>li>a {
     color: #2ba977;
 }
 
