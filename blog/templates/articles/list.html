@@ -30,7 +30,7 @@
                             <p class="card-text">{{ article.content|safe }}</p>
                             <p class="card-text">
                                 {% for category in article.categories.all %}
-                                    <a href="#">
+                                    <a href="#" class="text-decoration-none">
                                         <span class="badge badge-success">{{ category }}</span>
                                     </a>
                                 {% endfor %}
