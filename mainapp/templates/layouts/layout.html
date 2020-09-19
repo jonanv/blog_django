@@ -37,17 +37,17 @@
             <li>
                 <a href="{% url 'about' %}">Sobre nosotros</a>
             </li>
-            {% for page in pages %}
-                <li>
-                    <a href="{% url 'page' page.2 %}">{{ page.1 }}</a>
-                </li>
-            {% endfor %}
+                {% for page in pages %}
+                    <li>
+                        <a href="{% url 'page' page.2 %}">{{ page.1 }}</a>
+                    </li>
+                {% endfor %}
             <li>
                 <a href="{% url 'list_articles' %}">Categorías</a>
                 <ul>
-                    <li><a href="{% url 'list_articles' %}">Categoría 1</a></li>
-                    <li><a href="{% url 'list_articles' %}">Categoría 2</a></li>
-                    <li><a href="{% url 'list_articles' %}">Categoría 3</a></li>
+                    {% for category in categories  %}
+                        <li><a href="{% url 'list_articles' %}">{{ category.1 }}</a></li>
+                    {% endfor %}
                 </ul>
             </li>
         </ul>
