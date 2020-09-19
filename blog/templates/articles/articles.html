@@ -18,12 +18,14 @@
 
                 <div class="col-md-8">
                     <div class="card-body">
-                        <h5 class="card-title">{{ article.title }}</h5>
+                        <a href="{% url 'article' article.id %}">
+                            <h5 class="card-title">{{ article.title }}</h5>
+                        </a>
                         <p class="card-text">{{ article.content|safe }}</p>
                         <p class="card-text">
                             {% for category in article.categories.all %}
-                                <a href="#" class="text-decoration-none">
-                                    <span class="badge badge-success">{{ category }}</span>
+                                <a href="{% url 'category' category.id %}" class="text-decoration-none">
+                                    <span class="badge badge-success">{{ category.name }}</span>
                                 </a>
                             {% endfor %}
                         </p>

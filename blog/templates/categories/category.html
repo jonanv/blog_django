@@ -6,7 +6,8 @@
 
 {% block content %}
     <h1>{{ title }}</h1>
+    <p>{{ category.description }}</p>
 
-    {% include 'articles/articles.html' %}
-    
+    {% include 'articles/articles.html' with articles=category.article_set.all %}
+
 {% endblock content %}
