@@ -6,5 +6,5 @@ def get_categories(request):
 
     return {
         'categories': categories,
-        'ids': categories_in_use
+        'categories_in_use': categories_in_use
     }

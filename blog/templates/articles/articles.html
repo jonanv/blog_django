@@ -1,0 +1,40 @@
+{% load static %}
+
+<article class="article-item">
+    {% for article in articles %}
+
+        <div class="card mb-3">
+            <div class="row no-gutters">
+
+                {% if article.image != 'null' and article.image|length >= 1 %}
+                    <div class="col-md-4 d-flex justify-content-center align-items-center align-content-center">
+                        <img src="{{ article.image.url }}" class="card-img rounded img-fluid" alt="..." style="width: 150px">
+                    </div>
+                {% else %}
+                    <div class="col-md-4 d-flex justify-content-center align-items-center align-content-center">
+                        <img src="{% static 'img/no-image.png' %}" class="card-img rounded img-fluid" alt="..." style="width: 150px">
+                    </div>
+                {% endif %}
+
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ article.title }}</h5>
+                        <p class="card-text">{{ article.content|safe }}</p>
+                        <p class="card-text">
+                            {% for category in article.categories.all %}
+                                <a href="#" class="text-decoration-none">
+                                    <span class="badge badge-success">{{ category }}</span>
+                                </a>
+                            {% endfor %}
+                        </p>
+                        <p class="card-text">
+                            <small class="text-muted">{{ article.user.first_name }} {{ article.user.last_name }} | {{ article.created_at }}</small>
+                        </p>
+                        {% comment %} <a href="{% url 'borrar_article' id=article.id %}" class="btn btn-outline-danger btn-block">Eliminar</a> {% endcomment %}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    {% endfor %}
+</article>
