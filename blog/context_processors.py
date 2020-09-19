@@ -1,8 +1,10 @@
-from blog.models import Category
+from blog.models import Category, Article
 
 def get_categories(request):
-    categories = Category.objects.order_by('id').values_list('id', 'name')
+    categories_in_use = Article.objects.filter(public=True).values_list('categories', flat=True)
+    categories = Category.objects.filter(id__in=categories_in_use).order_by('id').values_list('id', 'name')
 
     return {
-        'categories': categories
+        'categories': categories,
+        'ids': categories_in_use
     }
