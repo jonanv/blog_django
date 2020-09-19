@@ -29,4 +29,5 @@ urlpatterns = [
     # path('page/<str:slug>', page_views.page, name='page'),
     path('', include('mainapp.urls')),
     path('', include('pages.urls')),
+    path('', include('blog.urls')),
 ]
