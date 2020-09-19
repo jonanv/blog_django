@@ -11,9 +11,9 @@ class CategoryAdmin(admin.ModelAdmin):
 
 class ArticleAdmin(admin.ModelAdmin):
     readonly_fields = ('user', 'created_at', 'updated_at')
-    search_fields = ('title', 'content')
-    list_filter = ('public',)
-    list_display = ('title', 'public', 'created_at')
+    search_fields = ('title', 'content', 'user__username', 'categories__name')
+    list_filter = ('public', 'user__username', 'categories__name')
+    list_display = ('title', 'public', 'user', 'created_at')
     ordering = ('-created_at',)
 
     # Guarda el usuario de forma automatica
