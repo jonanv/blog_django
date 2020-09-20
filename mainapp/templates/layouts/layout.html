@@ -31,10 +31,10 @@
 
     <nav class="menu">
         <ul>
+            <li>
+                <a href="{% url 'home' %}">Inicio</a>
+            </li>
             {% if user.email %}
-                <li>
-                    <a href="{% url 'home' %}">Inicio</a>
-                </li>
                 <li>
                     <a href="{% url 'about' %}">Sobre nosotros</a>
                 </li>
@@ -50,6 +50,9 @@
                             <li><a href="{% url 'category' category.0 %}">{{ category.1 }}</a></li>
                         {% endfor %}
                     </ul>
+                </li>
+                <li>
+                    <a href="{% url 'logout' %}">Cerrar sesion</a>
                 </li>
             {% else %}
                 <li>
