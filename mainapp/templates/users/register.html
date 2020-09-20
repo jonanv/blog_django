@@ -7,10 +7,19 @@
 {% block content %}
     <h1>{{ title }}</h1>
 
+    {{ register_form.errors }}
+
     <form action="" method="post">
         {% csrf_token %}
 
-        {{ register_form.as_p }}
+        {% comment %} {{ register_form.as_p }} {% endcomment %}
+
+        {% for field in register_form %}
+            <div class="form-group">
+                {{ field.label }}
+                {{ field }}
+            </div>
+        {% endfor %}
 
         <button type="submit" class="btn btn-success">Registrarse</button>
     </form>
