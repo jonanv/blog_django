@@ -6,4 +6,10 @@
 
 {% block content %}
     <h1>{{ title }}</h1>
+
+    {% if messages %}
+        {% for message in messages %}
+            <span class="badge badge-pill badge-success">{{ message }}</span>
+        {% endfor %}
+    {% endif %}
 {% endblock content %}
